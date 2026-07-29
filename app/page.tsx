@@ -1,16 +1,16 @@
+import FloatingCard from "@/components/FloatingCard";
+
 export default function Home() {
   return (
-    <main className="min-h-screen bg-slate-950 text-white">
-      {/* Hero */}
-      <div className="mb-12 flex items-center gap-3">
-        <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-amber-400 to-yellow-600 text-xl font-bold text-slate-950 shadow-lg shadow-amber-500/30">
-          L
-        </div>
-      
-        <span className="text-3xl font-bold tracking-wider">
-          Ludaris
-        </span>
+    <main className="min-h-screen bg-slate-950/60 backdrop-blur-md text-white">
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute left-[12%] top-[20%] text-slate-600">✦</div>
+        <div className="absolute left-[80%] top-[18%] text-slate-700">✦</div>
+        <div className="absolute left-[70%] top-[70%] text-slate-700">✦</div>
+        <div className="absolute left-[22%] top-[75%] text-slate-600">✦</div>
+        <div className="absolute left-[55%] top-[12%] text-slate-700">✦</div>
       </div>
+      {/* Hero */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-b from-indigo-950 via-slate-950 to-slate-950" />
@@ -22,6 +22,16 @@ export default function Home() {
           <div className="absolute bottom-20 right-20 h-72 w-72 rounded-full bg-cyan-500/10 blur-[140px]" />
         </div>
 
+        <div className="mb-12 flex items-center gap-3">
+          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-amber-400 to-yellow-600 text-xl font-bold text-slate-950 shadow-lg shadow-amber-500/30">
+            L
+          </div>
+        
+          <span className="text-3xl font-bold tracking-wider">
+            Ludaris
+          </span>
+        </div>
+        
         <div className="relative mx-auto flex min-h-[85vh] max-w-7xl flex-col items-center justify-center px-6 text-center">
           <span className="mb-4 rounded-full border border-amber-400/30 bg-amber-400/10 px-4 py-1 text-sm text-amber-300">
             Próximamente
@@ -60,7 +70,7 @@ export default function Home() {
         </h2>
 
         <div className="grid gap-8 md:grid-cols-2">
-          <div className="rounded-3xl border border-slate-800 bg-slate-900 p-8 transition hover:border-amber-400">
+          <div className="rounded-3xl border border-slate-800 bg-slate-900/60 backdrop-blur-md p-8 transition hover:border-amber-400">
             <p className="mb-3 text-sm uppercase tracking-widest text-amber-400">
               TCG
             </p>
@@ -75,7 +85,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="rounded-3xl border border-slate-800 bg-slate-900 p-8 transition hover:border-indigo-400">
+          <div className="rounded-3xl border border-slate-800 bg-slate-900/60 backdrop-blur-md p-8 transition hover:border-indigo-400">
             <p className="mb-3 text-sm uppercase tracking-widest text-indigo-300">
               TCG
             </p>
@@ -93,7 +103,7 @@ export default function Home() {
       </section>
 
       {/* Valores */}
-      <section className="bg-slate-900">
+      <section className="bg-slate-900/60 backdrop-blur-md">
         <div className="mx-auto max-w-6xl px-6 py-24">
           <h2 className="mb-12 text-center text-4xl font-bold">
             ¿Por qué Ludaris?
@@ -155,7 +165,7 @@ export default function Home() {
           <input
             type="email"
             placeholder="Tu correo electrónico"
-            className="flex-1 rounded-xl border border-slate-700 bg-slate-900 px-5 py-4 outline-none placeholder:text-slate-500 focus:border-amber-400"
+            className="flex-1 rounded-xl border border-slate-700 bg-slate-900/60 backdrop-blur-md px-5 py-4 outline-none placeholder:text-slate-500 focus:border-amber-400"
           />
 
           <button className="rounded-xl bg-amber-400 px-8 py-4 font-semibold text-slate-950 transition hover:bg-amber-300">
