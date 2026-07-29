@@ -1,6 +1,6 @@
 # Ludaris Website
 
-Landing oficial de Ludaris.
+(WIP) Landing oficial de Ludaris.
 
 ## Stack
 
