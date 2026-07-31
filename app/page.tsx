@@ -1,3 +1,4 @@
+import CTA from "@/components/sections/CTA";
 import Features from "@/components/sections/Features";
 import Hero from "@/components/sections/Hero";
 import Philosophy from "@/components/sections/Philosophy";
@@ -10,6 +11,7 @@ export default function Home() {
       <Features />
       <Philosophy />
       <Promise />
+      <CTA />
     </>
   );
 }
