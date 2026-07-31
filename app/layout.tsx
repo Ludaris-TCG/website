@@ -15,8 +15,53 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Ludaris",
+  title: {
+    default: "Ludaris",
+    template: "%s | Ludaris",
+  },
+  
   description: "Tu tienda online de TCGs",
+
+  applicationName: "Ludaris",
+
+  keywords: [
+    "Ludaris",
+    "TCG",
+    "juegos de cartas",
+    "cartas coleccionables",
+    "Star Wars",
+    "Unlimited",
+    "SWU",
+    "Lorcana",
+  ],
+
+  authors: [{ name: "Ludaris" }],
+
+  creator: "Ludaris",
+  publisher: "Ludaris",
+
+  metadataBase: new URL("https://ludaris.es"),
+
+  openGraph: {
+    title: "Ludaris",
+    description: "Donde comienza tu próxima colección.",
+    url: "https://ludaris.es",
+    siteName: "Ludaris",
+    locale: "es_ES",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Ludaris",
+    description: "Donde comienza tu próxima colección.",
+    creator: "@ludaris_tcg",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  }
 };
 
 export default function RootLayout({

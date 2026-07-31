@@ -21,13 +21,17 @@ export default function Hero() {
       </p>
 
       <div className="mt-10 flex gap-4">
-        <button className="rounded-full bg-yellow-400 px-6 py-3 font-semibold text-black transition hover:scale-105">
-          Descubrir Ludaris
-        </button>
+        <Link href="/nuestra-historia">
+          <button className="rounded-full bg-yellow-400 px-6 py-3 font-semibold text-black transition hover:scale-105">
+            Descubrir Ludaris
+          </button>
+        </Link>
 
-        <button className="rounded-full border border-white/15 px-6 py-3 transition hover:border-white">
-          Contacto
-        </button>
+        <Link href="/contacto">
+          <button className="rounded-full border border-white/15 px-6 py-3 transition hover:border-white">
+            Contacto
+          </button>
+        </Link>
       </div>
     </section>
   );

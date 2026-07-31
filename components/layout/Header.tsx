@@ -14,10 +14,6 @@ export default function Header() {
 
         <nav className="hidden md:flex items-center gap-8 text-sm text-gray-300">
           <Link href="/catalogo" className="hover:text-white transition">
-            Inicio
-          </Link>
-
-          <Link href="/catalogo" className="hover:text-white transition">
             Catálogo
           </Link>
 
