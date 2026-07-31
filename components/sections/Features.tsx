@@ -14,7 +14,7 @@ const features = [
   {
     title: "Comunidad",
     description:
-      "Queremos construir un espacio donde descubrir, aprender y compartir esta afición.",
+      "Queremos construir un espacio donde descubrir, aprender y compartir esta afición junto a otros jugadores y coleccionistas.",
     icon: "🤝",
   },
 ];
