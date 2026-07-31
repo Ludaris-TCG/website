@@ -1,7 +1,7 @@
 import Button from "@/components/ui/Button";
 import PageHeader from "@/components/ui/PageHeader";
 
-import DataTable from "@/components/dashboard/DataTable/DataTable";
+import DataTable from "@/components/dashboard/table/DataTable";
 
 import { products } from "./mock";
 import { columns } from "./columns";

@@ -1,4 +1,4 @@
-import type { Column } from "@/components/dashboard/DataTable/types";
+import type { Column } from "@/components/dashboard/table/types";
 import type { Product } from "@/types";
 
 export const columns: Column<Product>[] = [

@@ -6,9 +6,9 @@ import {
 
 import PageHeader from "@/components/ui/PageHeader";
 
-import StatCard from "@/components/dashboard/StatCard";
-import ActivityCard from "@/components/dashboard/ActivityCard";
-import QuickAction from "@/components/dashboard/QuickAction";
+import StatCard from "@/components/dashboard/cards/StatCard";
+import ActivityCard from "@/components/dashboard/cards/ActivityCard";
+import QuickAction from "@/components/dashboard/cards/QuickAction";
 
 export default function DashboardPage() {
   return (
