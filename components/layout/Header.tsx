@@ -25,8 +25,8 @@ export default function Header() {
             Editoriales
           </Link>
 
-          <Link href="/sobre" className="hover:text-white transition">
-            Sobre
+          <Link href="/nuestra-historia" className="hover:text-white transition">
+            Nuestra historia
           </Link>
 
           <Link href="/contacto" className="hover:text-white transition">
