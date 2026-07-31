@@ -1,17 +1,25 @@
+import Button from "@/components/ui/Button";
+import PageHeader from "@/components/ui/PageHeader";
+
 import DataTable from "@/components/dashboard/DataTable/DataTable";
+
+import { products } from "./mock";
+import { columns } from "./columns";
 
 export default function ProductosPage() {
   return (
-    <div>
-      <h1 className="text-3xl font-bold">
-        Productos
-      </h1>
+    <>
+      <PageHeader title="Productos">
+        <Button>
+          Nuevo producto
+        </Button>
+      </PageHeader>
 
       <DataTable
         columns={columns}
-        data={[]}
+        data={products}
         emptyTitle="Productos"
       />
-    </div>
+    </>
   );
 }

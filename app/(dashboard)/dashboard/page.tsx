@@ -14,10 +14,7 @@ export default function DashboardPage() {
   return (
     <div className="space-y-8">
 
-      <PageHeader
-        title="Dashboard"
-        description="Resumen general de Ludaris."
-      />
+      <PageHeader title="Dashboard" />
 
       <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
         <StatCard title="Productos" value="0" />
