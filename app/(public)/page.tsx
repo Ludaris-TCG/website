@@ -1,8 +1,8 @@
-import CTA from "@/components/sections/CTA";
-import Features from "@/components/sections/Features";
-import Hero from "@/components/sections/Hero";
-import Philosophy from "@/components/sections/Philosophy";
-import Promise from "@/components/sections/Promise";
+import CTA from "@/components/landing/sections/CTA";
+import Features from "@/components/landing/sections/Features";
+import Hero from "@/components/landing/sections/Hero";
+import Philosophy from "@/components/landing/sections/Philosophy";
+import Promise from "@/components/landing/sections/Promise";
 
 export default function Home() {
   return (
