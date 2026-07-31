@@ -1,3 +1,5 @@
+import DataTable from "@/components/dashboard/DataTable/DataTable";
+
 export default function ProductosPage() {
   return (
     <div>
@@ -5,9 +7,11 @@ export default function ProductosPage() {
         Productos
       </h1>
 
-      <p className="mt-3 text-zinc-500">
-        Próximamente...
-      </p>
+      <DataTable
+        columns={columns}
+        data={[]}
+        emptyTitle="Productos"
+      />
     </div>
   );
 }
