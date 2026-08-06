@@ -1,0 +1,214 @@
+// =========================
+// CONFIG
+// =========================
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// =========================
+// ENUMS
+// =========================
+
+enum EntityStatus {
+  ACTIVE
+  INACTIVE
+  ARCHIVED
+}
+
+enum ProductStatus {
+  DRAFT
+  COMING_SOON
+  AVAILABLE
+  DISCONTINUED
+  ARCHIVED
+}
+
+// =========================
+// ENTITIES
+// =========================
+
+model Brand {
+  id String @id @default(cuid())
+
+  name String
+  slug String @unique
+
+  website String?
+
+  logo String?
+
+  country String?
+
+  status EntityStatus @default(ACTIVE)
+
+  games    Game[]
+  products Product[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("brands")
+}
+
+model Game {
+  id String @id @default(cuid())
+
+  name String
+  slug String @unique
+
+  logo String?
+
+  heroImage String?
+
+  primaryColor String?
+
+  status EntityStatus @default(ACTIVE)
+
+  brandId String
+  brand   Brand  @relation(fields: [brandId], references: [id])
+
+  collections  Collection[]
+  productTypes ProductType[]
+  products     Product[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([brandId])
+  @@map("games")
+}
+
+model Collection {
+  id String @id @default(cuid())
+
+  name String
+  slug String @unique
+
+  code String
+
+  releaseOrder Int
+
+  releaseDate DateTime
+
+  image String?
+
+  status EntityStatus @default(ACTIVE)
+
+  gameId String
+  game   Game   @relation(fields: [gameId], references: [id])
+
+  products Product[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([gameId, code])
+  @@index([gameId])
+  @@map("collections")
+}
+
+model ProductCategory {
+  id String @id @default(cuid())
+
+  name String
+  slug String @unique
+
+  productTypes ProductType[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("product_categories")
+}
+
+model ProductType {
+  id String @id @default(cuid())
+
+  name String
+  slug String
+
+  categoryId String
+  category   ProductCategory @relation(fields: [categoryId], references: [id])
+
+  gameId String?
+  game   Game?   @relation(fields: [gameId], references: [id])
+
+  products Product[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([gameId, slug])
+  @@index([categoryId])
+  @@index([gameId])
+  @@map("product_types")
+}
+
+model Language {
+  id String @id @default(cuid())
+
+  name String
+
+  code String @unique
+
+  locale String @unique
+
+  products Product[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("languages")
+}
+
+model Product {
+  id String @id @default(cuid())
+
+  name String
+  slug String @unique
+
+  brandId String
+  brand   Brand  @relation(fields: [brandId], references: [id])
+
+  gameId String?
+  game   Game?   @relation(fields: [gameId], references: [id])
+
+  collectionId String?
+  collection   Collection? @relation(fields: [collectionId], references: [id])
+
+  productTypeId String
+  productType   ProductType @relation(fields: [productTypeId], references: [id])
+
+  languageId String?
+  language   Language? @relation(fields: [languageId], references: [id])
+
+  sku String  @unique
+  ean String? @unique
+
+  description String?
+
+  images String[]
+
+  weight Int?
+
+  status ProductStatus @default(DRAFT)
+
+  featured Boolean @default(false)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([brandId])
+  @@index([gameId])
+  @@index([collectionId])
+  @@index([productTypeId])
+  @@index([languageId])
+  @@index([status])
+  @@index([featured])
+  @@map("products")
+}
